@@ -1,7 +1,7 @@
 function submitComment(commentControl) {
     var comments = document.getElementsByName(commentControl)[0].value;
-    var subscriptionKey = "0c2cea3df5644eb3ac75e59e47f6c9ee";
-    var url = "https://westcentralus.api.cognitive.microsoft.com/text/analytics/v2.0/sentiment";
+    var subscriptionKey = "<API KEY>";
+    var url = "<URL>/sentiment";
 
     var payload = '{ "documents": [ { "language": "en-US", "id": "1", "text": "' + comments + '" }]}';
 
