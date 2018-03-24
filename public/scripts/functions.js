@@ -3,12 +3,20 @@ function submitComment(commentControl) {
     var subscriptionKey = "<API KEY>";
     var url = "<URL>/sentiment";
 
-    var payload = '{ "documents": [ { "language": "en-US", "id": "1", "text": "' + comments + '" }]}';
+    var payload = {
+        "documents": [
+            {
+                "language": "en-US",
+                "id": "1",
+                "text": comments
+            }
+        ]
+    }
 
     $.ajax({
         type: "POST",
         url: url,
-        data: payload,
+        data: JSON.stringify(payload),
         processData: false,
         headers: {
             "Ocp-Apim-Subscription-Key": subscriptionKey,
